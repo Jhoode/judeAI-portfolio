@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio | AI & Cloud Solutions</title>
+    <style>
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #333; line-height: 1.7; margin: 0; padding: 0; display: flex; justify-content: center; background-color: #fff; }
+        .container { max-width: 1100px; display: grid; grid-template-columns: 320px 1fr; gap: 60px; padding: 80px 40px; }
+        
+        /* Sidebar / About Me */
+        .sidebar { position: sticky; top: 80px; height: fit-content; }
+        .sidebar h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -0.5px; }
+        .profile-img { width: 100%; aspect-ratio: 1; border-radius: 4px; object-fit: cover; margin-bottom: 25px; background: #eee; }
+        .sidebar h2 { font-size: 0.85rem; text-transform: uppercase; color: #888; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 35px; margin-bottom: 15px; letter-spacing: 1px; }
+        .sidebar p { font-size: 0.95rem; color: #555; margin-bottom: 20px; }
+        
+        /* Skills Tags */
+        .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag { background: #f8f8f8; border: 1px solid #e0e0e0; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 500; color: #444; }
+
+        /* Main Content */
+        .section-header { font-size: 0.9rem; text-transform: uppercase; color: #999; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 40px; letter-spacing: 2px; }
+        .project { margin-bottom: 80px; }
+        .project h3 { font-size: 1.6rem; margin-bottom: 10px; color: #111; }
+        .project-meta { font-size: 0.9rem; color: #666; margin-bottom: 20px; font-style: italic; }
+        
+        /* Component Definitions Table */
+        .comp-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; }
+        .comp-table th, .comp-table td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
+        .comp-table th { background-color: #f9f9f9; color: #444; }
+
+        .figure-box { background: #fdfdfd; border: 1px solid #eee; padding: 20px; border-radius: 8px; margin: 25px 0; }
+        .figure-box img { width: 100%; height: auto; display: block; border: 1px solid #f0f0f0; }
+        .caption { font-size: 0.85rem; color: #777; margin-top: 10px; text-align: center; }
+
+        @media (max-width: 850px) { .container { grid-template-columns: 1fr; padding: 40px 20px; } .sidebar { position: static; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img src="your-image.jpg" alt="Professional Portrait" class="profile-img">
+        
+        <h1>About Me</h1>
+        <p>I am an <strong>AWS Certified Solutions Architect</strong> and <strong>AI Solutions Specialist</strong> with a master's degree in <strong>Information Assurance and cybersecurity.</strong> I specialize in the intersection of secure cloud infrastructure, network deployment, and advanced neural architectures.</p>
+        <p>My approach combines deep algorithmic understanding with a "Security-First" mindset to deploy robust, scalable AI solutions.</p>
+        
+        <h2>Technical Core</h2>
+        <div class="skills-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Linux (Bash/SSH)</span>
+            <span class="skill-tag">AI Architecture</span>
+            <span class="skill-tag">Algorithm Design</span>
+        </div>
+
+        <h2>Cloud & Infrastructure</h2>
+        <div class="skills-list">
+            <span class="skill-tag">AWS Solutions Architect</span>
+            <span class="skill-tag">Network Deployment</span>
+            <span class="skill-tag">Cloud Security</span>
+        </div>
+
+        <h2>Cybersecurity</h2>
+        <div class="skills-list">
+            <span class="skill-tag">Threat Modeling</span>
+            <span class="skill-tag">Secure Data Pipelines</span>
+            <span class="skill-tag">Identity & Access (IAM)</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section-header">Jude Omo-Ojugo</div>
+
+        <div class="project">
+            <h3>Project 1: Mapping the AI Landscape: A Framework for Algorithm Selection</h3>
+            <p class="project-meta">Artifact Type: Strategic Framework & Domain Mapping</p>
+            
+            <p><strong>The Challenge:</strong> Selecting the correct learning style and architecture is the most critical step in solving real-world problems. This project provides a comprehensive visual and technical framework for categorizing algorithms based on their learning style, application domain, and task functionality.</p>
+
+            <div class="figure-box">
+                <img src="ai_algorithm_landscape.png" alt="Spiral Dataset Training Results">
+                <div style="background: #fdfdfd; padding: 20px; border: 1px dashed #ccc; text-align: center; color: #666;">
+                    
+                </div>
+                <div class="caption">Figure 1: Taxonomy of Modern AI - Categorizing by Learning Style and Domain Application.</div>
+            </div>
+
+            <h4>Domain-Specific Implementations</h4>
+            <p>I have mapped the most effective architectures across the four pillars of modern industry applications:</p>
+            
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Core Algorithms</th>
+                        <th>Primary Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Supervised Learning</strong></td>
+                        <td>Random Forests, Gradient Boosting (XGBoost), Decision Trees</td>
+                        <td>Predictive analytics, risk assessment, and financial forecasting with labeled data.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unsupervised Learning</strong></td>
+                        <td>K-Means Clustering, Principal Component Analysis (PCA), Hierarchical Clustering</td>
+                        <td>Customer segmentation, Anomaly detection, and Data exploration.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deep Learning</strong></td>
+                        <td>Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), Transformers (BERT, GPT)</td>
+                        <td>Computer vision, Speech recognition, and Language translation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Generative AI</strong></td>
+                        <td>Diffusion Models, GANs, Large Language Models (LLMs)</td>
+                        <td>Synthetic data creation, innovative content generation, and image synthesis.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+        <div class="section-header">Reflections & Insight</div>
+        <div class="project">
+            <p>This artifact presents a visual framework of major machine learning algorithm categories and their primary application domains. Understanding how different algorithms align with specific problem types is critical when designing AI systems. For example, tree-based models often perform well with structured tabular data, while convolutional neural networks dominate computer vision tasks. More recently, transformer architectures have revolutionized natural language processing and generative AI applications.
+
+Creating this framework strengthened my understanding of the relationship between algorithm design and real-world AI applications. As an aspiring AI practitioner, this knowledge enables me to select appropriate models when solving practical problems across domains such as analytics, vision systems, and generative AI platforms.</p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+        <div class="project">
+            <h3>Project 2: Mapping Non-Linear Logic in Neural Architectures</h3>
+            <p class="project-meta">Artifact Type: Visual Presentation & Optimization Analysis</p>
+            
+            <p><strong>Context:</strong> This project serves as a technical demonstration of model convergence. Using the high-complexity "Spiral" dataset, I mapped how data flows through a network and identified the specific mechanical failures that lead to model plateaus.</p>
+
+            <div class="figure-box">
+                <img src="spiral-experiment.png" alt="Spiral Dataset Training Results">
+                <div class="caption">Figure 1: Initial training state demonstrating a linear bottleneck in the decision boundary.</div>
+            </div>
+
+            <h4>The Mechanics of the "Black Box"</h4>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Strategic Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Layers & Neurons</strong></td>
+                        <td>The computational backbone. Proper scaling of hidden layers prevents the "Information Bottleneck" effect.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weights & Optimization</strong></td>
+                        <td>Weights quantify connection strength; algorithms like SGD or Adam update these based on the <strong>Loss Function</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Activation Functions</strong></td>
+                        <td>The engine of non-linearity. ReLU and Tanh enable the model to approximate complex, non-linear functions.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Solution:</strong> By analyzing the relationship between the <strong>Tanh</strong> activation function and the <strong>gradient descent</strong> process, I determined that widening the hidden layers from 2 to 8 neurons allowed the model to maintain the representational capacity needed to "wrap" the spiral armatures perfectly.</p>
+        </div>
+
+        <div class="section-header">Reflections & Insight</div>
+        <div class="project">
+            <p>Solving for the spiral isn't just about training—it's about <strong>architecture design</strong>. This exercise reinforced my understanding of how low-level algorithmic choices impact high-level network deployment. Whether configuring a Linux environment or building a multi-layer perceptron, success is found in the precise tuning of the underlying infrastructure.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
