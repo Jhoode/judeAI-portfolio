@@ -5,92 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Portfolio | AI & Cloud Solutions</title>
     <style>
-        body { font-family: 'Inter', -apple-system, sans-serif; color: #333; line-height: 1.7; margin: 0; padding: 0; display: flex; justify-content: center; background-color: #fff; }
-        .container { max-width: 1100px; display: grid; grid-template-columns: 320px 1fr; gap: 60px; padding: 80px 40px; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 60px;
+            padding: 80px 40px;
+        }
         
         /* Sidebar / About Me */
-        .sidebar { position: sticky; top: 80px; height: fit-content; }
-        .sidebar h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 700; letter-spacing: -0.5px; }
-        .profile-img { width: 100%; aspect-ratio: 1; border-radius: 4px; object-fit: cover; margin-bottom: 25px; background: #eee; }
-        .sidebar h2 { font-size: 0.85rem; text-transform: uppercase; color: #888; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 35px; margin-bottom: 15px; letter-spacing: 1px; }
-        .sidebar p { font-size: 0.95rem; color: #555; margin-bottom: 20px; }
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            background: #eee;
+        }
+
+        .sidebar h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #888;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .sidebar p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
         
         /* Skills Tags */
-        .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
-        .skill-tag { background: #f8f8f8; border: 1px solid #e0e0e0; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 500; color: #444; }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #444;
+        }
 
         /* Main Content */
-        .section-header { font-size: 1.2rem; text-transform: uppercase; color: #999; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 40px; letter-spacing: 2px; }
-        .project { margin-bottom: 80px; }
-        .project h3 { font-size: 1.6rem; margin-bottom: 10px; color: #111; }
-        .project-meta { font-size: 0.9rem; color: #666; margin-bottom: 20px; font-style: italic; }
+        .section-header {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: #999;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        .project {
+            margin-bottom: 80px;
+        }
+
+        .project h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
         
         /* Component Definitions Table */
-        .comp-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.9rem; }
-        .comp-table th, .comp-table td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; }
-        .comp-table th { background-color: #f9f9f9; color: #444; }
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9rem;
+        }
 
-        .figure-box { background: #fdfdfd; border: 1px solid #eee; padding: 20px; border-radius: 8px; margin: 25px 0; }
-        .figure-box img { width: 100%; height: auto; display: block; border: 1px solid #f0f0f0; }
-        .caption { font-size: 0.85rem; color: #777; margin-top: 10px; text-align: center; }
+        .comp-table th,
+        .comp-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
 
-        /* 🔥 Project Navigation */
-.project-nav {
-    margin-bottom: 60px;
-}
+        .comp-table th {
+            background-color: #f9f9f9;
+            color: #444;
+        }
 
-.nav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+        .figure-box {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
 
-.nav-card {
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 8px;
-    background: #fafafa;
-    transition: 0.2s ease;
-}
+        .figure-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #f0f0f0;
+        }
 
-.nav-card:hover {
-    transform: translateY(-3px);
-    border-color: #ccc;
-}
+        .caption {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 10px;
+            text-align: center;
+        }
 
-.nav-card h3 {
-    margin-bottom: 5px;
-}
+        /* Project Navigation */
+        .project-nav {
+            margin-bottom: 60px;
+        }
 
-.nav-card p {
-    font-size: 0.9rem;
-    color: #666;
-}
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
 
-/* 🔥 Button */
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 14px;
-    background-color: #111;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.85rem;
-}
+        .nav-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            background: #fafafa;
+            transition: 0.2s ease;
+        }
 
-        @media (max-width: 850px) { .container { grid-template-columns: 1fr; padding: 40px 20px; } .sidebar { position: static; } }
+        .nav-card:hover {
+            transform: translateY(-3px);
+            border-color: #ccc;
+        }
+
+        .nav-card h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .nav-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 14px;
+            background-color: #111;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="sidebar">
+    <aside class="sidebar">
         <img src="your-image.jpg" alt="Professional Portrait" class="profile-img">
         
         <h1>About Me</h1>
-        <p>I am an <strong>AWS Certified Solutions Architect</strong> and <strong>AI Solutions Specialist</strong> with a master's degree in <strong>Information Assurance and cybersecurity.</strong> I specialize in the intersection of secure cloud infrastructure, network deployment, and advanced neural architectures.</p>
-        <p>My approach combines deep algorithmic understanding with a "Security-First" mindset to deploy robust, scalable AI solutions.</p>
+        <p>I am an <strong>AWS Certified Solutions Architect</strong> and <strong>AI Solutions Specialist</strong> with a master's degree in <strong>Information Assurance and Cybersecurity</strong>. I specialize in the intersection of secure cloud infrastructure, network deployment, and advanced neural architectures.</p>
+        <p>My approach combines deep algorithmic understanding with a security-first mindset to deploy robust, scalable AI solutions.</p>
         
         <h2>Technical Core</h2>
         <div class="skills-list">
@@ -113,56 +245,53 @@
             <span class="skill-tag">Secure Data Pipelines</span>
             <span class="skill-tag">Identity & Access (IAM)</span>
         </div>
-    </div>
+    </aside>
 
-  
-    <div class="main-content">
+    <main class="main-content">
         <div class="section-header">Jude Omo-Ojugo</div>
-        
 
-        <!-- 🔥 FEATURED PROJECT NAVIGATION -->
-<div class="project-nav">
-    <h2>Featured Projects</h2>
+        <div class="project-nav">
+            <h2>Featured Projects</h2>
+            <div class="nav-grid">
+                <div class="nav-card">
+                    <h3>Artifact 1</h3>
+                    <p>AI/ML Landscape Framework</p>
+                    <a href="#project1" class="btn">View Project</a>
+                </div>
 
-    <div class="nav-grid">
-        <div class="nav-card">
-            <h3>Artifact 1</h3>
-            <p>AI/ML Landscape Framework</p>
-            <a href="#project1" class="btn">View Project</a>
+                <div class="nav-card">
+                    <h3>Artifact 2</h3>
+                    <p>Neural Network Experiment</p>
+                    <a href="#project2" class="btn">View Project</a>
+                </div>
+
+                <div class="nav-card">
+                    <h3>Artifact 3</h3>
+                    <p>LLM Training & Cost Analysis</p>
+                    <a href="#project3" class="btn">View Project</a>
+                </div>
+
+                <div class="nav-card">
+                    <h3>Artifact 4</h3>
+                    <p>Explainable AI (XAI)</p>
+                    <a href="#project4" class="btn">View Project</a>
+                </div>
+            </div>
         </div>
-
-        <div class="nav-card">
-            <h3>Artifact 2</h3>
-            <p>Neural Network Experiment</p>
-            <a href="#project2" class="btn">View Project</a>
-        </div>
-
-        <div class="nav-card">
-            <h3>Artifact 3</h3>
-            <p>LLM Training & Cost Analysis</p>
-            <a href="#project3" class="btn">View Project</a>
-        </div>
-    </div>
-</div>
-
-    
 
         <div class="project" id="project1">
             <h3>Project 1: Mapping the AI Landscape: A Framework for Algorithm Selection</h3>
             <p class="project-meta">Artifact Type: Strategic Framework & Domain Mapping</p>
             
-            <p><strong>The Challenge:</strong> Selecting the correct learning style and architecture is the most critical step in solving real-world problems. This project provides a comprehensive visual and technical framework for categorizing algorithms based on their learning style, application domain, and task functionality.</p>
+            <p><strong>The Challenge:</strong> Selecting the correct learning style and architecture is one of the most critical steps in solving real-world problems. This project provides a comprehensive visual and technical framework for categorizing algorithms based on their learning style, application domain, and task functionality.</p>
 
             <div class="figure-box">
-                <img src="ai_algorithms_landscape.png" alt="Spiral Dataset Training Results">
-                <div style="background: #fdfdfd; padding: 20px; border: 1px dashed #ccc; text-align: center; color: #666;">
-                    
-                </div>
-                <div class="caption">Figure 1: Taxonomy of Modern AI - Categorizing by Learning Style and Domain Application.</div>
+                <img src="ai_algorithms_landscape.png" alt="AI Algorithm Landscape">
+                <div class="caption">Figure 1: Taxonomy of Modern AI, categorized by learning style and domain application.</div>
             </div>
 
             <h4>Domain-Specific Implementations</h4>
-            <p>I have mapped the most effective architectures across the four pillars of modern industry applications:</p>
+            <p>I mapped the most effective architectures across the four pillars of modern industry applications:</p>
             
             <table class="comp-table">
                 <thead>
@@ -181,28 +310,27 @@
                     <tr>
                         <td><strong>Unsupervised Learning</strong></td>
                         <td>K-Means Clustering, Principal Component Analysis (PCA), Hierarchical Clustering</td>
-                        <td>Customer segmentation, Anomaly detection, and Data exploration.</td>
+                        <td>Customer segmentation, anomaly detection, and data exploration.</td>
                     </tr>
                     <tr>
                         <td><strong>Deep Learning</strong></td>
-                        <td>Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), Transformers (BERT, GPT)</td>
-                        <td>Computer vision, Speech recognition, and Language translation.</td>
+                        <td>Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), Transformers (BERT, GPT)</td>
+                        <td>Computer vision, speech recognition, and language translation.</td>
                     </tr>
                     <tr>
                         <td><strong>Generative AI</strong></td>
                         <td>Diffusion Models, GANs, Large Language Models (LLMs)</td>
-                        <td>Synthetic data creation, innovative content generation, and image synthesis.</td>
+                        <td>Synthetic data creation, content generation, and image synthesis.</td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            
         <div class="section-header">Reflections & Insight</div>
-        
         <div class="project">
-            <p>This artifact presents a visual framework of major machine learning algorithm categories and their primary application domains. Understanding how different algorithms align with specific problem types is critical when designing AI systems. For example, tree-based models often perform well with structured tabular data, while convolutional neural networks dominate computer vision tasks. More recently, transformer architectures have revolutionized natural language processing and generative AI applications.
+            <p>This artifact presents a visual framework of major machine learning algorithm categories and their primary application domains. Understanding how different algorithms align with specific problem types is critical when designing AI systems. For example, tree-based models often perform well with structured tabular data, while convolutional neural networks dominate computer vision tasks. More recently, transformer architectures have revolutionized natural language processing and generative AI applications.</p>
 
-Creating this framework strengthened my understanding of the relationship between algorithm design and real-world AI applications. As an aspiring AI practitioner, this knowledge enables me to select appropriate models when solving practical problems across domains such as analytics, vision systems, and generative AI platforms.</p>
+            <p>Creating this framework strengthened my understanding of the relationship between algorithm design and real-world AI applications. As an aspiring AI practitioner, this knowledge enables me to select appropriate models when solving practical problems across domains such as analytics, vision systems, and generative AI platforms.</p>
         </div>
 
         <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
@@ -211,7 +339,7 @@ Creating this framework strengthened my understanding of the relationship betwee
             <h3>Project 2: Mapping Non-Linear Logic in Neural Architectures</h3>
             <p class="project-meta">Artifact Type: Visual Presentation & Optimization Analysis</p>
             
-            <p><strong>Context:</strong> This project serves as a technical demonstration of model convergence. Using the high-complexity "Spiral" dataset, I mapped how data flows through a network and identified the specific mechanical failures that lead to model plateaus.</p>
+            <p><strong>Context:</strong> This project serves as a technical demonstration of model convergence. Using the high-complexity Spiral dataset, I mapped how data flows through a network and identified the specific mechanical failures that lead to model plateaus.</p>
 
             <div class="figure-box">
                 <img src="spiral-experiment.png" alt="Spiral Dataset Training Results">
@@ -229,11 +357,11 @@ Creating this framework strengthened my understanding of the relationship betwee
                 <tbody>
                     <tr>
                         <td><strong>Layers & Neurons</strong></td>
-                        <td>The computational backbone. Proper scaling of hidden layers prevents the "Information Bottleneck" effect.</td>
+                        <td>The computational backbone. Proper scaling of hidden layers prevents the information bottleneck effect.</td>
                     </tr>
                     <tr>
                         <td><strong>Weights & Optimization</strong></td>
-                        <td>Weights quantify connection strength; algorithms like SGD or Adam update these based on the <strong>Loss Function</strong>.</td>
+                        <td>Weights quantify connection strength; algorithms like SGD or Adam update these based on the <strong>loss function</strong>.</td>
                     </tr>
                     <tr>
                         <td><strong>Activation Functions</strong></td>
@@ -242,50 +370,123 @@ Creating this framework strengthened my understanding of the relationship betwee
                 </tbody>
             </table>
 
-            <p><strong>Solution:</strong> By analyzing the relationship between the <strong>Tanh</strong> activation function and the <strong>gradient descent</strong> process, I determined that widening the hidden layers from 2 to 8 neurons allowed the model to maintain the representational capacity needed to "wrap" the spiral armatures perfectly.</p>
+            <p><strong>Solution:</strong> By analyzing the relationship between the <strong>Tanh</strong> activation function and the <strong>gradient descent</strong> process, I determined that widening the hidden layers from 2 to 8 neurons allowed the model to maintain the representational capacity needed to wrap the spiral armatures more effectively.</p>
         </div>
 
         <div class="section-header">Reflections & Insight</div>
         <div class="project">
-            <p>Solving for the spiral isn't just about training—it's about <strong>architecture design</strong>. This exercise reinforced my understanding of how low-level algorithmic choices impact high-level network deployment. Whether configuring a Linux environment or building a multi-layer perceptron, success is found in the precise tuning of the underlying infrastructure.</p>
+            <p>Solving for the spiral is not just about training. It is also about architecture design. This exercise reinforced my understanding of how low-level algorithmic choices affect high-level network behavior. Whether configuring a Linux environment or building a multi-layer perceptron, success often comes down to precise tuning of the underlying system.</p>
         </div>
 
-
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
 
         <div class="project" id="project3">
-    <h3>Project 3 - Training Large Language Models: Architecture, Pipeline, and Cost Analysis</h3>
-    <p class="project-meta">Artifact Type: Infrastructure Roadmap & Resource Analysis</p>
-    
-    <p><strong>Context:</strong> A visual and analytical breakdown of how modern generative AI models are trained, aligned, and deployed—and why doing so requires massive investments in data, compute, energy, time, and engineering expertise.</p>
-    <p><strong>Overview:</strong> This project explores the end-to-end training lifecycle of large language models such as GPT, Claude, Gemini, and LLaMA. The project focuses on both the technical pipeline and the operational economics of LLM training. Rather than treating generative AI as a black box, I broke the process into clear stages shown in the Figure below.</p>
-
-    <div class="figure-box">
-        <img src="llm-lifecycle.png" alt="llm-lifecycle">
-        <div style="background: #f9f9f9; padding: 20px; text-align: center; border: 1px dashed #ccc;">
+            <h3>Project 3: Training Large Language Models: Architecture, Pipeline, and Cost Analysis</h3>
+            <p class="project-meta">Artifact Type: Infrastructure Roadmap & Resource Analysis</p>
             
-        </div>
-        <div class="caption">Figure 1: High-level overview of computational and data requirements for Generative AI.</div>
-    </div>
+            <p><strong>Context:</strong> This project provides a visual and analytical breakdown of how modern generative AI models are trained, aligned, and deployed—and why doing so requires significant investments in data, compute, energy, time, and engineering expertise.</p>
 
-    <h4>Key Resource Insights</h4>
-    <p>In my analysis of models like <strong>Meta's LLaMA 3</strong>, I identified the following five critical cost drivers that impact the deployment lifecycle of AI:</p>
-    <ul>
-        <li><strong>Data:</strong> collection, licensing, filtering, storage, and processing.</li>
-        <li><strong>Compute:</strong> large-scale GPU or TPU clusters used for training.</li>
-        <li><strong>Electricity:</strong> electricity required to run high-performance hardware continuously.</li>
-        <li><strong>Time:</strong> extended training cycles, experimentation, and iteration.</li>
-        <li><strong>Talent:</strong> researchers, ML engineers, data engineers, and infrastructure teams.</li>
-    </ul>
-    
+            <p><strong>Overview:</strong> This project explores the end-to-end training lifecycle of large language models such as GPT, Claude, Gemini, and LLaMA. It focuses on both the technical pipeline and the operational economics of LLM training. Rather than treating generative AI as a black box, I broke the process into clear stages shown in the figure below.</p>
+
+            <div class="figure-box">
+                <img src="llm-lifecycle.png" alt="LLM lifecycle">
+                <div class="caption">Figure 1: High-level overview of computational and data requirements for generative AI.</div>
+            </div>
+
+            <h4>Key Resource Insights</h4>
+            <p>In my analysis of models like <strong>Meta’s LLaMA 3</strong>, I identified five critical cost drivers that shape the deployment lifecycle of AI:</p>
+            <ul>
+                <li><strong>Data:</strong> Collection, licensing, filtering, storage, and processing.</li>
+                <li><strong>Compute:</strong> Large-scale GPU or TPU clusters used for training.</li>
+                <li><strong>Electricity:</strong> The energy required to run high-performance hardware continuously.</li>
+                <li><strong>Time:</strong> Extended training cycles, experimentation, and iteration.</li>
+                <li><strong>Talent:</strong> Researchers, ML engineers, data engineers, and infrastructure teams.</li>
+            </ul>
+        </div>
 
         <div class="section-header">Reflections & Insight</div>
         <div class="project">
-            <p>This project helped me move beyond simply using generative AI tools and toward understanding the infrastructure decisions behind them. It reflects my interest in the deployment, scaling, and operational side of AI systems—especially how architectural choices, cost constraints, and training strategies affect real-world implementation.
-The final artifact is a visual graphic designed to make the training process of large language models easier to understand for both technical and non-technical audiences. It presents the major stages of model development and highlights the cost significance of compute, data, energy, and time in a way that is clear, practical, and portfolio-ready.
-.</p>
+            <p>This project helped me move beyond simply using generative AI tools and toward understanding the infrastructure decisions behind them. It reflects my interest in the deployment, scaling, and operational side of AI systems—especially how architectural choices, cost constraints, and training strategies affect real-world implementation.</p>
+
+            <p>The final artifact is a visual graphic designed to make the training process of large language models easier to understand for both technical and non-technical audiences. It presents the major stages of model development and highlights the cost significance of compute, data, energy, and time in a way that is clear, practical, and portfolio-ready.</p>
         </div>
-</div>
-    </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+        <div class="project" id="project4">
+            <h3>Project 4: Explainable AI (XAI): Building Trust in Opaque Systems</h3>
+            <p class="project-meta">Artifact Type: Transparency Framework & Validation Roadmap</p>
+
+            <p><strong>The Challenge:</strong> As generative AI models such as GPT, Gemini, Claude, and LLaMA become more capable, they also become more difficult to interpret. Their decision-making processes often function as black boxes, making it hard to determine why a specific output was produced. This creates concerns around trust, bias, validation, and accountability, especially in regulated environments such as healthcare, finance, law, and cybersecurity.</p>
+
+            <p><strong>Overview:</strong> This project presents a visual infographic that explains the importance of Explainable AI (XAI), highlights the main challenges in AI transparency, and maps out the validation techniques and performance metrics used to assess whether AI systems are reliable and trustworthy. The central idea is that model performance alone is not enough; decision processes must also be interpretable and responsibly governed.</p>
+
+            <div class="figure-box">
+                <img src="xai-infographic.png" alt="Explainable AI infographic showing opacity, validation metrics, and interpretability strategies">
+                <div class="caption">Figure 1: Explainable AI infographic illustrating opacity challenges, validation metrics, and interpretability strategies.</div>
+            </div>
+
+            <h4>Key Concepts and Validation Metrics</h4>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Description</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Opacity & Complexity</strong></td>
+                        <td>Large AI models rely on millions or billions of parameters distributed across many layers.</td>
+                        <td>Makes it difficult to explain how outputs are generated.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post-Hoc Explanations</strong></td>
+                        <td>Explanations are often generated after the model decision rather than during the reasoning process itself.</td>
+                        <td>Can improve interpretability, but may not fully reflect actual internal reasoning.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bias & Data Quality</strong></td>
+                        <td>AI systems can inherit noise, imbalance, or bias from their training data.</td>
+                        <td>Poor data quality can lead to unfair or misleading decisions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Precision</strong></td>
+                        <td>Measures how many predicted positive results were actually correct.</td>
+                        <td>Helps reduce false positives.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recall</strong></td>
+                        <td>Measures how many actual positive cases the model successfully identified.</td>
+                        <td>Helps reduce false negatives.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F1-Score</strong></td>
+                        <td>Balances precision and recall into a single performance metric.</td>
+                        <td>Useful when both error types matter.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Interpretability Techniques</h4>
+            <p>This artifact highlights several methods currently used to improve transparency in AI systems:</p>
+            <ul>
+                <li><strong>Attention Visualization:</strong> Reveals which parts of the input the model focuses on most strongly.</li>
+                <li><strong>Model Probing:</strong> Examines internal layers and representations to better understand learned features.</li>
+                <li><strong>Chain-of-Thought Prompting:</strong> Encourages step-by-step reasoning to make outputs more interpretable.</li>
+                <li><strong>Human-in-the-Loop Review:</strong> Adds manual oversight for low-confidence or high-risk decisions.</li>
+            </ul>
+        </div>
+
+        <div class="section-header">Reflections & Insight</div>
+        <div class="project">
+            <p>This project expanded my understanding of AI beyond performance and architecture by emphasizing the importance of explainability, validation, and accountability. A model may achieve high accuracy, but if its decision process cannot be understood or audited, its usefulness becomes limited in real-world environments where trust and compliance matter. Studying XAI helped me connect technical performance metrics such as precision, recall, and F1-score with broader ethical concerns such as fairness, transparency, and responsible deployment.</p>
+
+            <p>As someone interested in AI deployment and secure systems, I see explainability as a critical part of modern AI operations. In fields like cybersecurity, it is not enough for a system to flag an alert; engineers must also understand why the alert was triggered in order to validate its reliability and respond effectively. This artifact reflects my growing interest in building AI systems that are not only powerful, but also interpretable, auditable, and trustworthy.</p>
+        </div>
+
+    </main>
 </div>
 
 </body>
