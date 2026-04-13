@@ -212,6 +212,216 @@
                 position: static;
             }
         }
+
+        /* Artifact 5 Dashboard */
+        .dashboard-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a5f);
+            color: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 24px 0 30px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .dashboard-hero h4 {
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+            letter-spacing: -0.3px;
+        }
+
+        .dashboard-hero p {
+            margin: 0;
+            color: rgba(255,255,255,0.86);
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 25px 0 30px;
+        }
+
+        .metric-card {
+            background: #fafafa;
+            border: 1px solid #ececec;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .metric-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 6px;
+        }
+
+        .metric-note {
+            font-size: 0.88rem;
+            color: #666;
+        }
+
+        .matrix-wrap {
+            overflow-x: auto;
+            margin: 25px 0 30px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .dashboard-table {
+            width: 100%;
+            min-width: 900px;
+            border-collapse: collapse;
+        }
+
+        .dashboard-table th,
+        .dashboard-table td {
+            text-align: left;
+            padding: 14px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+            font-size: 0.92rem;
+        }
+
+        .dashboard-table th {
+            background: #f8fafc;
+            color: #444;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            line-height: 1;
+            border: 1px solid transparent;
+        }
+
+        .badge-good {
+            background: #eaf8ef;
+            color: #1f7a3d;
+            border-color: #cdeed8;
+        }
+
+        .badge-mid {
+            background: #fff7e8;
+            color: #9a6700;
+            border-color: #f3dfb5;
+        }
+
+        .badge-low {
+            background: #fdeeee;
+            color: #b42318;
+            border-color: #f5c7c7;
+        }
+
+        .recommend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 25px 0 30px;
+        }
+
+        .recommend-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background: #fcfcfc;
+            padding: 20px;
+        }
+
+        .recommend-card h5 {
+            margin: 0 0 10px;
+            font-size: 1rem;
+            color: #111;
+        }
+
+        .recommend-card p {
+            margin: 0 0 12px;
+            color: #555;
+            font-size: 0.92rem;
+        }
+
+        .recommend-card ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .insight-strip {
+            background: #f8fafc;
+            border-left: 4px solid #111;
+            padding: 18px 20px;
+            margin: 25px 0 20px;
+            border-radius: 6px;
+        }
+
+        .insight-strip p {
+            margin: 0;
+            color: #444;
+        }
+
+        @media (max-width: 950px) {
+            .metric-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .recommend-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 42px;
+            height: 42px;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease;
+            z-index: 999;
+        }
+
+        #backToTop:hover {
+            background: #333;
+            transform: translateY(-3px);
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -276,6 +486,13 @@
                     <p>Explainable AI (XAI)</p>
                     <a href="#project4" class="btn">View Project</a>
                 </div>
+
+                <div class="nav-card">
+                    <h3>Artifact 5</h3>
+                    <p>AI Model Selection Decision Dashboard</p>
+                    <a href="#project5" class="btn">View Project</a>
+                </div>
+
             </div>
         </div>
 
@@ -479,15 +696,200 @@
             </ul>
         </div>
 
-        <div class="section-header">Reflections & Insight</div>
-        <div class="project">
-            <p>This project expanded my understanding of AI beyond performance and architecture by emphasizing the importance of explainability, validation, and accountability. A model may achieve high accuracy, but if its decision process cannot be understood or audited, its usefulness becomes limited in real-world environments where trust and compliance matter. Studying XAI helped me connect technical performance metrics such as precision, recall, and F1-score with broader ethical concerns such as fairness, transparency, and responsible deployment.</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
 
-            <p>As someone interested in AI deployment and secure systems, I see explainability as a critical part of modern AI operations. In fields like cybersecurity, it is not enough for a system to flag an alert; engineers must also understand why the alert was triggered in order to validate its reliability and respond effectively. This artifact reflects my growing interest in building AI systems that are not only powerful, but also interpretable, auditable, and trustworthy.</p>
+
+        <div class="project" id="project5">
+            <h3>Project 5: Cross-Domain Model Selection Dashboard</h3>
+            <p class="project-meta">Artifact Type: Model Evaluation, Explainability Review, and Deployment Decision Matrix</p>
+
+            <div class="dashboard-hero">
+                <h4>Choosing the right AI model is a deployment decision, not just a benchmark decision.</h4>
+                <p>This artifact compares representative models across NLP, computer vision, and tabular machine learning to show how size, accuracy, speed, and explainability affect real-world implementation choices.</p>
+            </div>
+
+            <p><strong>The Challenge:</strong> Modern AI teams do not choose models based on accuracy alone. Real systems must consider memory footprint, inference latency, ease of integration, and interpretability. In this artifact, I evaluated representative pretrained models across multiple domains and translated those trade-offs into a decision dashboard suitable for practical model selection.</p>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Domains Covered</div>
+                    <div class="metric-value">3</div>
+                    <div class="metric-note">NLP, Vision, and Tabular ML</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Models Compared</div>
+                    <div class="metric-value">5</div>
+                    <div class="metric-note">BERT, DistilBERT, MobileNetV3, EfficientNet-B0, XGBoost</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Core Criteria</div>
+                    <div class="metric-value">4</div>
+                    <div class="metric-note">Size, Accuracy, Speed, Explainability</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Primary Goal</div>
+                    <div class="metric-value">Best Fit</div>
+                    <div class="metric-note">Map model choice to deployment context</div>
+                </div>
+            </div>
+
+            <h4>Model Selection Scope</h4>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Models Included</th>
+                        <th>Reason for Inclusion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>NLP / Language Models</strong></td>
+                        <td>BERT Base, DistilBERT</td>
+                        <td>To compare a heavier, accuracy-oriented transformer with a smaller and faster distilled alternative.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Computer Vision</strong></td>
+                        <td>MobileNetV3, EfficientNet-B0</td>
+                        <td>To evaluate the trade-off between mobile efficiency and balanced image classification performance.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tabular Data</strong></td>
+                        <td>XGBoost</td>
+                        <td>To represent a highly practical structured-data model known for speed, strong performance, and explainability.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Decision Matrix Dashboard</h4>
+            <div class="matrix-wrap">
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Domain</th>
+                            <th>Size</th>
+                            <th>Accuracy</th>
+                            <th>Speed</th>
+                            <th>Explainability</th>
+                            <th>Best Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>BERT Base</strong></td>
+                            <td>NLP</td>
+                            <td><span class="badge badge-low">Large</span></td>
+                            <td><span class="badge badge-good">High</span></td>
+                            <td><span class="badge badge-low">Slower</span></td>
+                            <td><span class="badge badge-mid">Moderate</span></td>
+                            <td>High-quality text classification, semantic understanding, and server-side NLP pipelines</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DistilBERT</strong></td>
+                            <td>NLP</td>
+                            <td><span class="badge badge-good">Smaller</span></td>
+                            <td><span class="badge badge-mid">High</span></td>
+                            <td><span class="badge badge-good">Fast</span></td>
+                            <td><span class="badge badge-mid">Moderate</span></td>
+                            <td>Latency-sensitive NLP applications and lightweight deployment environments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MobileNetV3</strong></td>
+                            <td>Vision</td>
+                            <td><span class="badge badge-good">Small</span></td>
+                            <td><span class="badge badge-mid">Good</span></td>
+                            <td><span class="badge badge-good">Fast</span></td>
+                            <td><span class="badge badge-low">Lower</span></td>
+                            <td>Mobile and edge-based image classification workloads</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EfficientNet-B0</strong></td>
+                            <td>Vision</td>
+                            <td><span class="badge badge-mid">Medium</span></td>
+                            <td><span class="badge badge-good">Strong</span></td>
+                            <td><span class="badge badge-mid">Moderate</span></td>
+                            <td><span class="badge badge-low">Lower</span></td>
+                            <td>Balanced vision workloads where accuracy matters more than raw speed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XGBoost</strong></td>
+                            <td>Tabular</td>
+                            <td><span class="badge badge-good">Compact</span></td>
+                            <td><span class="badge badge-good">Strong</span></td>
+                            <td><span class="badge badge-good">Fast</span></td>
+                            <td><span class="badge badge-good">High</span></td>
+                            <td>Structured data prediction, business analytics, and explainable AI workflows</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Deployment Recommendations by Domain</h4>
+            <div class="recommend-grid">
+                <div class="recommend-card">
+                    <h5>NLP Recommendation</h5>
+                    <p>BERT Base is better when accuracy and richer language understanding matter most, while DistilBERT is the stronger choice when lower latency and lighter deployment are important.</p>
+                    <ul>
+                        <li>BERT: quality-first</li>
+                        <li>DistilBERT: efficiency-first</li>
+                    </ul>
+                </div>
+
+                <div class="recommend-card">
+                    <h5>Vision Recommendation</h5>
+                    <p>MobileNetV3 is ideal for constrained devices and edge systems, while EfficientNet-B0 offers a stronger balance when some additional compute is acceptable.</p>
+                    <ul>
+                        <li>MobileNetV3: speed-first</li>
+                        <li>EfficientNet-B0: balanced accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="recommend-card">
+                    <h5>Tabular Recommendation</h5>
+                    <p>XGBoost remains one of the strongest deployment-ready options for structured data because it combines predictive strength, fast inference, and higher explainability.</p>
+                    <ul>
+                        <li>XGBoost: practical production default</li>
+                        <li>Strong fit for analytics and risk modeling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Methodology</h4>
+            <p>I selected representative models from different AI domains and evaluated them using four deployment-oriented criteria: model size, predictive strength, speed, and explainability. Because benchmarks vary across domains, I did not treat raw percentages as directly comparable. Instead, I translated the evidence into a practical dashboard designed to support real-world model selection decisions.</p>
+
+            <div class="insight-strip">
+                <p><strong>Key Insight:</strong> The best model is not always the largest or most accurate one on paper. The best model is the one that fits the constraints, risks, and operational goals of the system being deployed.</p>
+            </div>
+
+            <h4>Conclusion</h4>
+            <p>This artifact demonstrates my ability to evaluate AI systems from a deployment perspective rather than a purely academic one. It reflects how model selection must account for trade-offs in performance, speed, and interpretability across different domains. This kind of decision-making is essential when building production-ready AI systems that are scalable, efficient, and trustworthy.</p>
         </div>
+
+    
 
     </main>
 </div>
+
+<button id="backToTop">↑</button>
+<script>
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btn.classList.add("show");
+        } else {
+            btn.classList.remove("show");
+        }
+    });
+
+    btn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
 
 </body>
 </html>
